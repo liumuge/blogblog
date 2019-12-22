@@ -1,0 +1,191 @@
+2019-12-22 14:35:34.413  INFO 2664 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Starting BlogblogApplication on MuGe-LAPTOP with PID 2664 (D:\WorkingArea\IDEAWorkspace\blogblog\target\classes started by MuGe in D:\WorkingArea\IDEAWorkspace\blogblog)
+2019-12-22 14:35:34.420  INFO 2664 --- [main] com.lhylxl.blogblog.BlogblogApplication  : No active profile set, falling back to default profiles: default
+2019-12-22 14:35:36.433  INFO 2664 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-22 14:35:36.852  INFO 2664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 31001 (http)
+2019-12-22 14:35:36.872  INFO 2664 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-22 14:35:36.872  INFO 2664 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-22 14:35:37.056  INFO 2664 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-22 14:35:37.056  INFO 2664 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2466 ms
+2019-12-22 14:35:37.113  INFO 2664 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2019-12-22 14:35:37.115  INFO 2664 --- [main] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2019-12-22 14:35:38.001  INFO 2664 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-12-22 14:35:38.106  INFO 2664 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-22 14:35:38.378  INFO 2664 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-22 14:35:38.398  INFO 2664 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-22 14:35:38.442  INFO 2664 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-22 14:35:38.787  INFO 2664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 31001 (http) with context path ''
+2019-12-22 14:35:38.791  INFO 2664 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Started BlogblogApplication in 5.536 seconds (JVM running for 10.587)
+2019-12-22 14:41:33.188  INFO 19816 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Starting BlogblogApplication on MuGe-LAPTOP with PID 19816 (D:\WorkingArea\IDEAWorkspace\blogblog\target\classes started by MuGe in D:\WorkingArea\IDEAWorkspace\blogblog)
+2019-12-22 14:41:33.191  INFO 19816 --- [main] com.lhylxl.blogblog.BlogblogApplication  : No active profile set, falling back to default profiles: default
+2019-12-22 14:41:34.211  INFO 19816 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-22 14:41:34.498  INFO 19816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 31001 (http)
+2019-12-22 14:41:34.508  INFO 19816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-22 14:41:34.508  INFO 19816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-22 14:41:34.626  INFO 19816 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-22 14:41:34.626  INFO 19816 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1375 ms
+2019-12-22 14:41:34.676  INFO 19816 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2019-12-22 14:41:34.678  INFO 19816 --- [main] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2019-12-22 14:41:35.275  INFO 19816 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-12-22 14:41:35.357  INFO 19816 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-22 14:41:35.511  INFO 19816 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-22 14:41:35.529  INFO 19816 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-22 14:41:35.561  INFO 19816 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-22 14:41:35.758  INFO 19816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 31001 (http) with context path ''
+2019-12-22 14:41:35.762  INFO 19816 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Started BlogblogApplication in 3.081 seconds (JVM running for 6.941)
+2019-12-22 14:42:01.080  INFO 19816 --- [http-nio-31001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-22 14:42:01.081  INFO 19816 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-22 14:42:01.086  INFO 19816 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-12-22 14:42:40.066  INFO 19816 --- [http-nio-31001-exec-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-12-22 14:42:40.416 DEBUG 19816 --- [http-nio-31001-exec-5] c.l.blogblog.mapper.UserDao.findUser     : ==>  Preparing: select *from tb_user where username=? And password=? 
+2019-12-22 14:42:40.473 DEBUG 19816 --- [http-nio-31001-exec-5] c.l.blogblog.mapper.UserDao.findUser     : ==> Parameters: tryr(String), 98fcb4e365a618e26ce45f6e7d32e13b(String)
+2019-12-22 14:42:40.523 DEBUG 19816 --- [http-nio-31001-exec-5] c.l.blogblog.mapper.UserDao.findUser     : <==      Total: 0
+2019-12-22 14:42:40.526 DEBUG 19816 --- [http-nio-31001-exec-5] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==>  Preparing: INSERT INTO tb_user(username,password) VALUES(?,?) 
+2019-12-22 14:42:40.527 DEBUG 19816 --- [http-nio-31001-exec-5] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==> Parameters: tryr(String), 98fcb4e365a618e26ce45f6e7d32e13b(String)
+2019-12-22 14:42:40.591 DEBUG 19816 --- [http-nio-31001-exec-5] c.lhylxl.blogblog.mapper.UserDao.Insert  : <==    Updates: 1
+2019-12-22 14:44:31.582 DEBUG 19816 --- [http-nio-31001-exec-3] c.l.blogblog.mapper.UserDao.findUser     : ==>  Preparing: select *from tb_user where username=? And password=? 
+2019-12-22 14:44:31.583 DEBUG 19816 --- [http-nio-31001-exec-3] c.l.blogblog.mapper.UserDao.findUser     : ==> Parameters: ytutyu(String), 3908307b2a1bcbe251c00a0cf8b69d5a(String)
+2019-12-22 14:44:31.584 DEBUG 19816 --- [http-nio-31001-exec-3] c.l.blogblog.mapper.UserDao.findUser     : <==      Total: 0
+2019-12-22 14:44:31.585 DEBUG 19816 --- [http-nio-31001-exec-3] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==>  Preparing: INSERT INTO tb_user(username,password) VALUES(?,?) 
+2019-12-22 14:44:31.585 DEBUG 19816 --- [http-nio-31001-exec-3] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==> Parameters: ytutyu(String), 3908307b2a1bcbe251c00a0cf8b69d5a(String)
+2019-12-22 14:44:31.797 DEBUG 19816 --- [http-nio-31001-exec-3] c.lhylxl.blogblog.mapper.UserDao.Insert  : <==    Updates: 1
+2019-12-22 14:48:03.683  INFO 13944 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Starting BlogblogApplication on MuGe-LAPTOP with PID 13944 (D:\WorkingArea\IDEAWorkspace\blogblog\target\classes started by MuGe in D:\WorkingArea\IDEAWorkspace\blogblog)
+2019-12-22 14:48:03.687  INFO 13944 --- [main] com.lhylxl.blogblog.BlogblogApplication  : No active profile set, falling back to default profiles: default
+2019-12-22 14:48:04.893  INFO 13944 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-22 14:48:05.170  INFO 13944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 31001 (http)
+2019-12-22 14:48:05.179  INFO 13944 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-22 14:48:05.179  INFO 13944 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-22 14:48:05.289  INFO 13944 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-22 14:48:05.290  INFO 13944 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1517 ms
+2019-12-22 14:48:05.335  INFO 13944 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2019-12-22 14:48:05.337  INFO 13944 --- [main] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2019-12-22 14:48:05.938  INFO 13944 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-12-22 14:48:06.008  INFO 13944 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-22 14:48:06.163  INFO 13944 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-22 14:48:06.176  INFO 13944 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-22 14:48:06.208  INFO 13944 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-22 14:48:06.406  INFO 13944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 31001 (http) with context path ''
+2019-12-22 14:48:06.409  INFO 13944 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Started BlogblogApplication in 3.282 seconds (JVM running for 7.137)
+2019-12-22 14:48:16.672  INFO 13944 --- [http-nio-31001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-22 14:48:16.673  INFO 13944 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-22 14:48:16.678  INFO 13944 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-12-22 14:48:16.790  INFO 13944 --- [http-nio-31001-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-12-22 14:48:16.884 DEBUG 13944 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : ==>  Preparing: select *from tb_user where username=? And password=? 
+2019-12-22 14:48:16.922 DEBUG 13944 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : ==> Parameters: tyut(String), 73884879bbbe356c1af531d3709d761d(String)
+2019-12-22 14:48:16.951 DEBUG 13944 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : <==      Total: 0
+2019-12-22 14:48:16.954 DEBUG 13944 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==>  Preparing: INSERT INTO tb_user(username,password) VALUES(?,?) 
+2019-12-22 14:48:16.955 DEBUG 13944 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==> Parameters: tyut(String), 73884879bbbe356c1af531d3709d761d(String)
+2019-12-22 14:48:16.997 DEBUG 13944 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : <==    Updates: 1
+2019-12-22 14:49:03.894 DEBUG 13944 --- [http-nio-31001-exec-2] c.l.blogblog.mapper.UserDao.findUser     : ==>  Preparing: select *from tb_user where username=? And password=? 
+2019-12-22 14:49:03.895 DEBUG 13944 --- [http-nio-31001-exec-2] c.l.blogblog.mapper.UserDao.findUser     : ==> Parameters: rey(String), e32fc6151b596d8a01f20db45a1bbbac(String)
+2019-12-22 14:49:03.896 DEBUG 13944 --- [http-nio-31001-exec-2] c.l.blogblog.mapper.UserDao.findUser     : <==      Total: 0
+2019-12-22 14:49:03.896 DEBUG 13944 --- [http-nio-31001-exec-2] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==>  Preparing: INSERT INTO tb_user(username,password) VALUES(?,?) 
+2019-12-22 14:49:03.896 DEBUG 13944 --- [http-nio-31001-exec-2] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==> Parameters: rey(String), e32fc6151b596d8a01f20db45a1bbbac(String)
+2019-12-22 14:49:04.038 DEBUG 13944 --- [http-nio-31001-exec-2] c.lhylxl.blogblog.mapper.UserDao.Insert  : <==    Updates: 1
+2019-12-22 14:49:17.503  INFO 884 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Starting BlogblogApplication on MuGe-LAPTOP with PID 884 (D:\WorkingArea\IDEAWorkspace\blogblog\target\classes started by MuGe in D:\WorkingArea\IDEAWorkspace\blogblog)
+2019-12-22 14:49:17.507  INFO 884 --- [main] com.lhylxl.blogblog.BlogblogApplication  : No active profile set, falling back to default profiles: default
+2019-12-22 14:49:18.789  INFO 884 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-22 14:49:19.080  INFO 884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 31001 (http)
+2019-12-22 14:49:19.091  INFO 884 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-22 14:49:19.092  INFO 884 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-22 14:49:19.214  INFO 884 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-22 14:49:19.214  INFO 884 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1623 ms
+2019-12-22 14:49:19.261  INFO 884 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2019-12-22 14:49:19.263  INFO 884 --- [main] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2019-12-22 14:49:19.887  INFO 884 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-12-22 14:49:19.962  INFO 884 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-22 14:49:20.127  INFO 884 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-22 14:49:20.141  INFO 884 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-22 14:49:20.176  INFO 884 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-22 14:49:20.385  INFO 884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 31001 (http) with context path ''
+2019-12-22 14:49:20.389  INFO 884 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Started BlogblogApplication in 3.447 seconds (JVM running for 7.573)
+2019-12-22 14:50:17.046  INFO 884 --- [http-nio-31001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-22 14:50:17.046  INFO 884 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-22 14:50:17.051  INFO 884 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-12-22 14:50:17.164  INFO 884 --- [http-nio-31001-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-12-22 14:50:17.259 DEBUG 884 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : ==>  Preparing: select *from tb_user where username=? And password=? 
+2019-12-22 14:50:17.295 DEBUG 884 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : ==> Parameters: hgjh(String), 87e3128b483abb3500a1e9ea56aa2bea(String)
+2019-12-22 14:50:17.326 DEBUG 884 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : <==      Total: 0
+2019-12-22 14:50:17.329 DEBUG 884 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==>  Preparing: INSERT INTO tb_user(username,password) VALUES(?,?) 
+2019-12-22 14:50:17.330 DEBUG 884 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==> Parameters: hgjh(String), 87e3128b483abb3500a1e9ea56aa2bea(String)
+2019-12-22 14:50:17.475 DEBUG 884 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : <==    Updates: 1
+2019-12-22 14:51:34.653 DEBUG 884 --- [http-nio-31001-exec-4] c.l.blogblog.mapper.UserDao.findUser     : ==>  Preparing: select *from tb_user where username=? And password=? 
+2019-12-22 14:51:34.653 DEBUG 884 --- [http-nio-31001-exec-4] c.l.blogblog.mapper.UserDao.findUser     : ==> Parameters: tukjhgkgh(String), fa46ec0b4924e8c2194a53ef61b94039(String)
+2019-12-22 14:51:34.654 DEBUG 884 --- [http-nio-31001-exec-4] c.l.blogblog.mapper.UserDao.findUser     : <==      Total: 0
+2019-12-22 14:51:34.655 DEBUG 884 --- [http-nio-31001-exec-4] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==>  Preparing: INSERT INTO tb_user(username,password) VALUES(?,?) 
+2019-12-22 14:51:34.655 DEBUG 884 --- [http-nio-31001-exec-4] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==> Parameters: tukjhgkgh(String), fa46ec0b4924e8c2194a53ef61b94039(String)
+2019-12-22 14:51:34.773 DEBUG 884 --- [http-nio-31001-exec-4] c.lhylxl.blogblog.mapper.UserDao.Insert  : <==    Updates: 1
+2019-12-22 14:53:47.566  INFO 6248 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Starting BlogblogApplication on MuGe-LAPTOP with PID 6248 (D:\WorkingArea\IDEAWorkspace\blogblog\target\classes started by MuGe in D:\WorkingArea\IDEAWorkspace\blogblog)
+2019-12-22 14:53:47.570  INFO 6248 --- [main] com.lhylxl.blogblog.BlogblogApplication  : No active profile set, falling back to default profiles: default
+2019-12-22 14:53:48.640  INFO 6248 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-22 14:53:48.929  INFO 6248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 31001 (http)
+2019-12-22 14:53:48.940  INFO 6248 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-22 14:53:48.940  INFO 6248 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-22 14:53:49.061  INFO 6248 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-22 14:53:49.061  INFO 6248 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1432 ms
+2019-12-22 14:53:49.106  INFO 6248 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2019-12-22 14:53:49.108  INFO 6248 --- [main] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2019-12-22 14:53:49.737  INFO 6248 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-12-22 14:53:49.813  INFO 6248 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-22 14:53:49.974  INFO 6248 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-22 14:53:49.988  INFO 6248 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-22 14:53:50.022  INFO 6248 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-22 14:53:50.232  INFO 6248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 31001 (http) with context path ''
+2019-12-22 14:53:50.237  INFO 6248 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Started BlogblogApplication in 3.172 seconds (JVM running for 7.187)
+2019-12-22 14:58:07.108  WARN 6248 --- [rebel-change-detector-thread] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.lhylxl.blogblog.mapper]' package. Please check your configuration.
+2019-12-22 14:58:17.096  INFO 6368 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Starting BlogblogApplication on MuGe-LAPTOP with PID 6368 (D:\WorkingArea\IDEAWorkspace\blogblog\target\classes started by MuGe in D:\WorkingArea\IDEAWorkspace\blogblog)
+2019-12-22 14:58:17.098  INFO 6368 --- [main] com.lhylxl.blogblog.BlogblogApplication  : No active profile set, falling back to default profiles: default
+2019-12-22 14:58:18.301  INFO 6368 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-22 14:58:18.583  INFO 6368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 31001 (http)
+2019-12-22 14:58:18.593  INFO 6368 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-22 14:58:18.593  INFO 6368 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-22 14:58:18.710  INFO 6368 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-22 14:58:18.711  INFO 6368 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1528 ms
+2019-12-22 14:58:18.757  INFO 6368 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2019-12-22 14:58:18.759  INFO 6368 --- [main] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2019-12-22 14:58:19.367  INFO 6368 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-12-22 14:58:19.441  INFO 6368 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-22 14:58:19.593  INFO 6368 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-22 14:58:19.605  INFO 6368 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-22 14:58:19.637  INFO 6368 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-22 14:58:19.834  INFO 6368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 31001 (http) with context path ''
+2019-12-22 14:58:19.837  INFO 6368 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Started BlogblogApplication in 3.359 seconds (JVM running for 7.385)
+2019-12-22 14:58:19.839  INFO 6368 --- [main] c.l.b.common.exception.ExceptionCatch    : 服务启动成功...
+2019-12-22 14:59:56.336  WARN 6368 --- [rebel-change-detector-thread] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.lhylxl.blogblog.mapper]' package. Please check your configuration.
+2019-12-22 15:03:47.224  INFO 6368 --- [http-nio-31001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-22 15:03:47.224  INFO 6368 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-22 15:03:47.244  INFO 6368 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2019-12-22 15:03:47.426  INFO 6368 --- [http-nio-31001-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-12-22 15:03:47.570 DEBUG 6368 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : ==>  Preparing: select *from tb_user where username=? And password=? 
+2019-12-22 15:03:47.645 DEBUG 6368 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : ==> Parameters: rete(String), 58caf43c58f32082ba6fddf66e538653(String)
+2019-12-22 15:03:47.701 DEBUG 6368 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : <==      Total: 0
+2019-12-22 15:03:47.704 DEBUG 6368 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==>  Preparing: INSERT INTO tb_user(username,password) VALUES(?,?) 
+2019-12-22 15:03:47.705 DEBUG 6368 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==> Parameters: rete(String), 58caf43c58f32082ba6fddf66e538653(String)
+2019-12-22 15:03:47.815 DEBUG 6368 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : <==    Updates: 1
+2019-12-22 15:04:52.780  INFO 4364 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Starting BlogblogApplication on MuGe-LAPTOP with PID 4364 (D:\WorkingArea\IDEAWorkspace\blogblog\target\classes started by MuGe in D:\WorkingArea\IDEAWorkspace\blogblog)
+2019-12-22 15:04:52.784  INFO 4364 --- [main] com.lhylxl.blogblog.BlogblogApplication  : No active profile set, falling back to default profiles: default
+2019-12-22 15:04:54.053  INFO 4364 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-22 15:04:54.360  INFO 4364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 31001 (http)
+2019-12-22 15:04:54.370  INFO 4364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-22 15:04:54.371  INFO 4364 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-22 15:04:54.491  INFO 4364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-22 15:04:54.491  INFO 4364 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1607 ms
+2019-12-22 15:04:54.540  INFO 4364 --- [main] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2019-12-22 15:04:54.542  INFO 4364 --- [main] o.s.boot.web.servlet.RegistrationBean    : Filter webStatFilter was not registered (possibly already registered?)
+2019-12-22 15:04:55.164  INFO 4364 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-12-22 15:04:55.240  INFO 4364 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-22 15:04:55.409  INFO 4364 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-22 15:04:55.424  INFO 4364 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-22 15:04:55.459  INFO 4364 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-22 15:04:55.676  INFO 4364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 31001 (http) with context path ''
+2019-12-22 15:04:55.681  INFO 4364 --- [main] com.lhylxl.blogblog.BlogblogApplication  : Started BlogblogApplication in 3.5 seconds (JVM running for 7.578)
+2019-12-22 15:04:55.684  INFO 4364 --- [main] c.l.b.common.exception.ExceptionCatch    : 服务启动成功...
+2019-12-22 15:05:02.716  INFO 4364 --- [http-nio-31001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-22 15:05:02.716  INFO 4364 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-22 15:05:02.724  INFO 4364 --- [http-nio-31001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-12-22 15:05:02.839  INFO 4364 --- [http-nio-31001-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-12-22 15:05:02.937 DEBUG 4364 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : ==>  Preparing: select *from tb_user where username=? And password=? 
+2019-12-22 15:05:02.973 DEBUG 4364 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : ==> Parameters: tygf(String), 7f2ad84484a866c4441bcb542cfcc45d(String)
+2019-12-22 15:05:03.004 DEBUG 4364 --- [http-nio-31001-exec-1] c.l.blogblog.mapper.UserDao.findUser     : <==      Total: 0
+2019-12-22 15:05:03.008 DEBUG 4364 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==>  Preparing: INSERT INTO tb_user(username,password) VALUES(?,?) 
+2019-12-22 15:05:03.009 DEBUG 4364 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : ==> Parameters: tygf(String), 7f2ad84484a866c4441bcb542cfcc45d(String)
+2019-12-22 15:05:03.185 DEBUG 4364 --- [http-nio-31001-exec-1] c.lhylxl.blogblog.mapper.UserDao.Insert  : <==    Updates: 1
