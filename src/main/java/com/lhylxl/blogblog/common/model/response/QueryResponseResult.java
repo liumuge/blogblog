@@ -1,6 +1,7 @@
 package com.lhylxl.blogblog.common.model.response;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data

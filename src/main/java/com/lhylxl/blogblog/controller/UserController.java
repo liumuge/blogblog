@@ -31,4 +31,10 @@ public class UserController {
 	public QueryResponseResult register(@RequestBody User user){
 		return userService.register(user);
 	}
+
+	@PostMapping("/login")
+	@ApiOperation("登录")
+	public QueryResponseResult login(@RequestBody User user){
+		return userService.login(user);
+	}
 }
