@@ -44,6 +44,9 @@ spring:
   output:
     ansi:
       enabled: always
+#解决存入数据库的时间和取出的时间差8个小时
+  jackson:
+    time-zone: GMT+8
 logging:
   level:
     #打印sql语句
@@ -59,3 +62,11 @@ server:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+#pagehelper分页插件配置
+#pagehelper:
+#  # 数据库方言
+#  helper-dialect: mysql
+#  # 判断合理性比如负数和超过最大总数
+#  reasonable: true
+#  # 支持方法参数
+#  support-methods-arguments: true

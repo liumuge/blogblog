@@ -1,5 +1,6 @@
 package com.lhylxl.blogblog.mapper;
 
+import com.lhylxl.blogblog.common.utils.Page;
 import com.lhylxl.blogblog.domain.User;
 import java.util.List;
 import org.apache.ibatis.annotations.Insert;
@@ -29,5 +30,11 @@ public interface UserMapper {
 
 	@Select("select *from tb_user where username=#{userName} And password=#{password}")
 	public List<User> findUser(User user);
+
+	@Select("select *from tb_user")
+	public List<User> findUser1();
+
+	@Select("select *from tb_user limit #{start},#{pageSize}")
+	public List<User> findUser2(Page page);
 
 }

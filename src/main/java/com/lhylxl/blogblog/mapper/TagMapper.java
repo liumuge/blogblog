@@ -30,4 +30,6 @@ public interface TagMapper {
 	@Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
 	public int Insert(Tag tag);
 
+
+
 }

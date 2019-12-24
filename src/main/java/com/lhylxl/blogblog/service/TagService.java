@@ -57,5 +57,4 @@ public class TagService {
 		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
 	}
 
-
 }

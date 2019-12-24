@@ -40,7 +40,7 @@ public class UserService {
 			}
 			List<User> list = new ArrayList<>();
 			list.add(user);
-			result.setList(list);
+			result.setList((List<User>) user);
 			result.setTotal(list.size());
 			if (user.getCreatTime()==null){
 				user.setCreatTime(new Date());

@@ -1,7 +1,13 @@
 package com.lhylxl.blogblog;
 
+
+import com.lhylxl.blogblog.common.utils.Page;
+import com.lhylxl.blogblog.domain.Tag;
 import com.lhylxl.blogblog.domain.User;
+import com.lhylxl.blogblog.mapper.ArticleMapper;
 import com.lhylxl.blogblog.mapper.UserMapper;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 import org.junit.jupiter.api.Test;
@@ -14,6 +20,9 @@ class BlogblogApplicationTests {
 
 	@Autowired
 	UserMapper userMapper;
+
+	@Autowired
+	ArticleMapper articleMapper;
 	@Test
 	void contextLoads() {
 		User user = new User();
@@ -33,4 +42,28 @@ class BlogblogApplicationTests {
 
 	}
 
+	@Test
+	public void testPageHelper(){
+
+	}
+	@Test
+	public void testPage(){
+		List<User> user11 = userMapper.findUser1();
+		Page userPage = new Page(4,5,user11.size());
+		List<User> user = userMapper.findUser2(userPage);
+		for (User user1 : user) {
+			System.out.println(user1);
+		}
+		userPage.setList(user);
+		System.out.println(userPage);
+
+	}
+
+	@Test
+	public void testFindTag(){
+		List<Tag> tags = articleMapper.findByArticleId(53);
+		for (Tag tag : tags) {
+			System.out.println(tag);
+		}
+	}
 }
