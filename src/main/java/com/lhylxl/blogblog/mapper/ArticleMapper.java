@@ -4,9 +4,11 @@ import com.lhylxl.blogblog.common.utils.Page;
 import com.lhylxl.blogblog.domain.Article;
 import com.lhylxl.blogblog.domain.Tag;
 import java.util.List;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 /**
  * @program: blogblog
@@ -17,7 +19,7 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface ArticleMapper {
 
-	@Insert("INSERT INTO tb_article(title,content,creatTime,uId,status) VALUES(#{title},#{content},#{creatTime},#{uId},#{status})")
+	@Insert("INSERT INTO tb_article(title,content,contentHtml,creatTime,uId,status) VALUES(#{title},#{content},#{contentHtml},#{creatTime},#{uId},#{status})")
 	@Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
 	public int insert(Article article);
 
@@ -32,4 +34,20 @@ public interface ArticleMapper {
 
 	@Select("select * from tb_tag where id=any(SELECT tagId FROM tb_article_tag WHERE articleId=#{ArticleId})")
 	public List<Tag> findByArticleId(Integer ArticleId);
+
+	@Select("select * from tb_article where id=#{ArticleId}")
+	public List<Article> findById(Integer ArticleId);
+
+	@Update("UPDATE tb_article SET  status=1 WHERE id=#{ArticleId}")
+	public int releaseArticle(Integer ArticleId);
+
+	@Delete("delete from tb_article WHERE id=#{ArticleId}")
+	public int deleteArticle(Integer ArticleId);
+
+	@Update("update tb_article set title=#{title},content=#{content},updateTime=#{updateTime},contentHtml=#{contentHtml} WHERE id=#{id}")
+	public int updateArticle(Article article);
+
+	@Delete("delete from tb_article_tag WHERE articleId=#{ArticleId}")
+	public int deleteArticleTag(Integer ArticleId);
+
 }

@@ -22,7 +22,10 @@ public class Article {
 	private Date creatTime;
 	private Integer status;
 	private String content;
+	private String contentHtml;
 	private Integer uId;
 	private Integer views;
 	private List tags;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date updateTime;
 }

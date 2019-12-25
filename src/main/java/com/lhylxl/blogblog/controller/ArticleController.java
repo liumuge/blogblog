@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @description:
  */
 @RestController
-@Api(value="article管理接口",description = "文章保存，文章删除,查找")
+@Api(value = "article管理接口", description = "文章保存，文章删除,查找")
 @RequestMapping("/article")
 public class ArticleController {
 
@@ -31,13 +31,39 @@ public class ArticleController {
 
 	@PostMapping("/addArticle")
 	@ApiOperation("添加文章")
-	public QueryResponseResult addArticle(@RequestBody Article article){
+	public QueryResponseResult addArticle(@RequestBody Article article) {
 		return articleService.addArticle(article);
 	}
 
 	@GetMapping("/getArticleList")
 	@ApiOperation("获取文章列表")
-	public QueryResponseResult findList(Integer currentPage, Integer pageSize,Integer uId,Integer status){
-		return articleService.findList(currentPage, pageSize, uId,status);
+	public QueryResponseResult findList(Integer currentPage, Integer pageSize, Integer uId,
+			Integer status) {
+		return articleService.findList(currentPage, pageSize, uId, status);
 	}
+
+	@GetMapping("/getArticle")
+	@ApiOperation("获取文章详情")
+	public QueryResponseResult findById(Integer articleId) {
+		return articleService.findById(articleId);
+	}
+
+	@GetMapping("/releaseArticle")
+	@ApiOperation("发布草稿")
+	public QueryResponseResult releaseArticle(Integer articleId) {
+		return articleService.releaseArticle(articleId);
+	}
+
+	@GetMapping("/removeArticle")
+	@ApiOperation("删除文章")
+	public QueryResponseResult removeArticle(Integer articleId) {
+		return articleService.removeArticle(articleId);
+	}
+
+	@PostMapping("/updateArticle")
+	@ApiOperation("更新文章")
+	public QueryResponseResult updateArticle(@RequestBody Article article) {
+		return articleService.updateArticle(article);
+	}
+
 }

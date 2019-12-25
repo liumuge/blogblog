@@ -82,4 +82,63 @@ public class ArticleService {
 		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
 	}
 
+	/**
+	 * 获取文章
+	 * @param ArticleId
+	 * @return
+	 */
+	public QueryResponseResult findById(Integer ArticleId){
+		if(ArticleId!=null){
+			List<Article> articles = articleMapper.findById(ArticleId);
+			QueryResult<Article> result = new QueryResult<>();
+			result.setList(articles);
+			result.setTotal(articles.size());
+			return new QueryResponseResult(CommonCode.SUCCESS,result);
+		}
+		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+	}
+	/**
+	 * 发布草稿
+	 * @param ArticleId
+	 * @return
+	 */
+	public QueryResponseResult releaseArticle(Integer ArticleId){
+		if(ArticleId!=null){
+			int i = articleMapper.releaseArticle(ArticleId);
+			QueryResult<Article> result = new QueryResult<>();
+			result.setTotal(i);
+			return new QueryResponseResult(CommonCode.SUCCESS,result);
+		}
+		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+	}
+	/**
+	 * 删除文章
+	 * @param ArticleId
+	 * @return
+	 */
+	public QueryResponseResult removeArticle(Integer ArticleId){
+		if(ArticleId!=null){
+			int i = articleMapper.deleteArticle(ArticleId);
+			int tag = articleMapper.deleteArticleTag(ArticleId);
+			QueryResult<Article> result = new QueryResult<>();
+			result.setTotal(i);
+			return new QueryResponseResult(CommonCode.SUCCESS,result);
+		}
+		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+	}
+	/**
+	 * 更新文章
+	 * @param article
+	 * @return
+	 */
+	public QueryResponseResult updateArticle(Article article){
+		if(article!=null){
+			article.setUpdateTime(new Date());
+			int i = articleMapper.updateArticle(article);
+			QueryResult<Article> result = new QueryResult<>();
+			result.setTotal(i);
+			return new QueryResponseResult(CommonCode.SUCCESS,result);
+		}
+		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+	}
 }
