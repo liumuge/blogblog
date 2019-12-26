@@ -26,6 +26,7 @@ public class Article {
 	private Integer uId;
 	private Integer views;
 	private List tags;
+
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date updateTime;
 }

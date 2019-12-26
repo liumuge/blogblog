@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.UpdateProvider;
 
 /**
  * @program: blogblog
@@ -26,11 +27,17 @@ public interface ArticleMapper {
 	@Insert("INSERT Into tb_article_tag(articleId,tagId) values(#{articleId},#{tagId})")
 	public int addTag(Integer articleId,Integer tagId);
 
-	@Select("select * from tb_article where uId=#{uId} And status=#{status} LIMIT #{page.start},#{page.pageSize}")
+	@Select("select * from tb_article where uId=#{uId} And status=#{status} ORDER BY creatTime DESC LIMIT #{page.start},#{page.pageSize}")
 	public List<Article> findArticlePage(Page page,Integer uId,Integer status);
+
+	@Select("select * from tb_article where uId=#{uId} ORDER BY creatTime DESC LIMIT #{page.start},#{page.pageSize}")
+	public List<Article> findArticlePageM(Page page,Integer uId);
 
 	@Select("select * from tb_article where uId=#{uId} And status=#{status}")
 	public List<Article> findAllArticle(Integer uId,Integer status);
+
+	@Select("select * from tb_article where uId=#{uId}")
+	public List<Article> findAllArticleM(Integer uId);
 
 	@Select("select * from tb_tag where id=any(SELECT tagId FROM tb_article_tag WHERE articleId=#{ArticleId})")
 	public List<Tag> findByArticleId(Integer ArticleId);
@@ -58,4 +65,10 @@ public interface ArticleMapper {
 
 	@Select("select*from tb_article where content like #{search}")
 	public List<Article> searchTotal(String search);
+
+	@Select("select title from tb_article where id=#{articleId}")
+	public String findByArticleIdTitle(Integer articleId);
+
+	@Update("update tb_article set views=#{views} where id=#{ArticleId}")
+	public int updateViews(Integer views,Integer ArticleId);
 }

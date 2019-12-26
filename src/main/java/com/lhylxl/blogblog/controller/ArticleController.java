@@ -42,17 +42,18 @@ public class ArticleController {
 		return articleService.findList(currentPage, pageSize, uId, status);
 	}
 
+	@GetMapping("/findListM")
+	@ApiOperation("获取文章列表")
+	public QueryResponseResult findListM(Integer currentPage, Integer pageSize, Integer uId) {
+		return articleService.findListM(currentPage, pageSize, uId);
+	}
+
 	@GetMapping("/getArticle")
 	@ApiOperation("获取文章详情")
 	public QueryResponseResult findById(Integer articleId) {
 		return articleService.findById(articleId);
 	}
 
-	@GetMapping("/releaseArticle")
-	@ApiOperation("发布草稿")
-	public QueryResponseResult releaseArticle(Integer articleId) {
-		return articleService.releaseArticle(articleId);
-	}
 
 	@GetMapping("/removeArticle")
 	@ApiOperation("删除文章")
@@ -60,16 +61,18 @@ public class ArticleController {
 		return articleService.removeArticle(articleId);
 	}
 
-	@PostMapping("/updateArticle")
-	@ApiOperation("更新文章")
-	public QueryResponseResult updateArticle(@RequestBody Article article) {
-		return articleService.updateArticle(article);
-	}
 	@GetMapping("/search")
 	@ApiOperation("搜索")
 	public QueryResponseResult search(Integer currentPage, Integer pageSize, Integer uId,
 			Integer status,String search) {
 		return articleService.search(currentPage,pageSize,status,uId,search);
 	}
+
+	@GetMapping("/updateViews")
+	@ApiOperation("更新访问量")
+	public QueryResponseResult updateViews(Integer articleId) {
+		return articleService.updateViews(articleId);
+	}
+
 
 }

@@ -58,6 +58,35 @@ public class ArticleService {
 	}
 
 	/**
+	 * 管理页面
+	 * @param currentPage
+	 * @param pageSize
+	 * @param uId
+	 * @return
+	 */
+	public QueryResponseResult findListM(Integer currentPage, Integer pageSize, Integer uId) {
+		if (pageSize == null) {
+			pageSize = 5;
+		}
+		List<Article> article1 = articleMapper.findAllArticleM(uId);
+		//分页
+		Page articlePage = new Page(currentPage, pageSize, article1.size());
+		//查询的分页数据
+		List<Article> articlePages = articleMapper.findArticlePageM(articlePage, uId);
+		for (Article article : articlePages) {
+			List<Tag> byArticleId = articleMapper.findByArticleId(article.getId());
+			article.setTags(byArticleId);
+		}
+		articlePage.setList(articlePages);
+		QueryResult<Page> result = new QueryResult<>();
+		ArrayList<Page> list = new ArrayList<>();
+		list.add(articlePage);
+		result.setTotal(articlePages.size());
+		result.setList(list);
+		return new QueryResponseResult(CommonCode.SUCCESS, result);
+	}
+
+	/**
 	 * 添加文章
 	 *
 	 * @param article
@@ -77,7 +106,7 @@ public class ArticleService {
 			} else {
 				article.setUpdateTime(new Date());
 				int i = articleMapper.updateArticle(article);
-				if (i==1){
+				if (i == 1) {
 					List tags = article.getTags();
 					for (Object tag : tags) {
 						articleMapper.updateTag(article.getId(), (Integer) tag);
@@ -116,21 +145,6 @@ public class ArticleService {
 		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
 	}
 
-	/**
-	 * 发布草稿
-	 *
-	 * @param ArticleId
-	 * @return
-	 */
-	public QueryResponseResult releaseArticle(Integer ArticleId) {
-		if (ArticleId != null) {
-			int i = articleMapper.releaseArticle(ArticleId);
-			QueryResult<Article> result = new QueryResult<>();
-			result.setTotal(i);
-			return new QueryResponseResult(CommonCode.SUCCESS, result);
-		}
-		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
-	}
 
 	/**
 	 * 删除文章
@@ -149,37 +163,23 @@ public class ArticleService {
 		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
 	}
 
-	/**
-	 * 更新文章
-	 *
-	 * @param article
-	 * @return
-	 */
-	public QueryResponseResult updateArticle(Article article) {
-		if (article != null) {
-			article.setUpdateTime(new Date());
-			int i = articleMapper.updateArticle(article);
-			QueryResult<Article> result = new QueryResult<>();
-			result.setTotal(i);
-			return new QueryResponseResult(CommonCode.SUCCESS, result);
-		}
-		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
-	}
 
 	/**
 	 * 搜索
+	 *
 	 * @return
 	 */
-	public QueryResponseResult search(Integer currentPage, Integer pageSize,Integer status, Integer uId,String search){
+	public QueryResponseResult search(Integer currentPage, Integer pageSize, Integer status,
+			Integer uId, String search) {
 		if (pageSize == null) {
 			pageSize = 5;
 		}
-		search='%'+search+'%';
+		search = '%' + search + '%';
 		List<Article> article1 = articleMapper.searchTotal(search);
 		//分页
 		Page articlePage = new Page(currentPage, pageSize, article1.size());
 		//查询的分页数据
-		List<Article> articlePages = articleMapper.search(articlePage,uId,search,status);
+		List<Article> articlePages = articleMapper.search(articlePage, uId, search, status);
 		for (Article article : articlePages) {
 			List<Tag> byArticleId = articleMapper.findByArticleId(article.getId());
 			article.setTags(byArticleId);
@@ -191,5 +191,25 @@ public class ArticleService {
 		result.setTotal(articlePages.size());
 		result.setList(list);
 		return new QueryResponseResult(CommonCode.SUCCESS, result);
+	}
+
+	/**
+	 * 更新访问量
+	 * @param ArticleId
+	 * @return
+	 */
+	public QueryResponseResult updateViews(Integer ArticleId) {
+		if (ArticleId != null) {
+			List<Article> articles = articleMapper.findById(ArticleId);
+			for (Article article : articles) {
+				if (article.getStatus() == 1) {
+					articleMapper.updateViews(article.getViews() + 1, article.getId());
+				}
+			}
+			QueryResult<Article> result = new QueryResult<>();
+			result.setTotal(articles.size());
+			return new QueryResponseResult(CommonCode.SUCCESS, result);
+		}
+		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
 	}
 }
