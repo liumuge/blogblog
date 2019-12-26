@@ -65,5 +65,11 @@ public class ArticleController {
 	public QueryResponseResult updateArticle(@RequestBody Article article) {
 		return articleService.updateArticle(article);
 	}
+	@GetMapping("/search")
+	@ApiOperation("搜索")
+	public QueryResponseResult search(Integer currentPage, Integer pageSize, Integer uId,
+			Integer status,String search) {
+		return articleService.search(currentPage,pageSize,status,uId,search);
+	}
 
 }

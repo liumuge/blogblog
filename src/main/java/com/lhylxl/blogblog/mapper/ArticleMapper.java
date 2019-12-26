@@ -44,10 +44,18 @@ public interface ArticleMapper {
 	@Delete("delete from tb_article WHERE id=#{ArticleId}")
 	public int deleteArticle(Integer ArticleId);
 
-	@Update("update tb_article set title=#{title},content=#{content},updateTime=#{updateTime},contentHtml=#{contentHtml} WHERE id=#{id}")
+	@Update("update tb_article set title=#{title},status=#{status},content=#{content},updateTime=#{updateTime},contentHtml=#{contentHtml} WHERE id=#{id}")
 	public int updateArticle(Article article);
 
 	@Delete("delete from tb_article_tag WHERE articleId=#{ArticleId}")
 	public int deleteArticleTag(Integer ArticleId);
 
+	@Update("update tb_article_tag set articleId=#{articleId} where tagId=#{tagId}")
+	public int updateTag(Integer articleId,Integer tagId);
+
+	@Select("select*from tb_article where content like #{search} and status=#{status} and uId=#{uId} LIMIT #{page.start},#{page.pageSize}")
+	public List<Article> search(Page page,Integer uId,String search,Integer status);
+
+	@Select("select*from tb_article where content like #{search}")
+	public List<Article> searchTotal(String search);
 }

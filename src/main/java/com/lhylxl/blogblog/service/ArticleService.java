@@ -34,18 +34,19 @@ public class ArticleService {
 	 * @param pageSize
 	 * @return
 	 */
-	public QueryResponseResult findList(Integer currentPage, Integer pageSize,Integer uId,Integer status) {
-		if (pageSize==null){
-			pageSize=5;
+	public QueryResponseResult findList(Integer currentPage, Integer pageSize, Integer uId,
+			Integer status) {
+		if (pageSize == null) {
+			pageSize = 5;
 		}
-		List<Article> article1 = articleMapper.findAllArticle(uId,status);
+		List<Article> article1 = articleMapper.findAllArticle(uId, status);
 		//分页
-		Page articlePage = new Page(currentPage,pageSize,article1.size());
+		Page articlePage = new Page(currentPage, pageSize, article1.size());
 		//查询的分页数据
-		List<Article> articlePages = articleMapper.findArticlePage(articlePage, uId,status);
-		for (Article page : articlePages) {
-			List<Tag> byArticleId = articleMapper.findByArticleId(page.getId());
-			page.setTags(byArticleId);
+		List<Article> articlePages = articleMapper.findArticlePage(articlePage, uId, status);
+		for (Article article : articlePages) {
+			List<Tag> byArticleId = articleMapper.findByArticleId(article.getId());
+			article.setTags(byArticleId);
 		}
 		articlePage.setList(articlePages);
 		QueryResult<Page> result = new QueryResult<>();
@@ -53,7 +54,7 @@ public class ArticleService {
 		list.add(articlePage);
 		result.setTotal(articlePages.size());
 		result.setList(list);
-		return new QueryResponseResult(CommonCode.SUCCESS,result);
+		return new QueryResponseResult(CommonCode.SUCCESS, result);
 	}
 
 	/**
@@ -64,81 +65,131 @@ public class ArticleService {
 	 */
 	public QueryResponseResult addArticle(Article article) {
 		if (article != null) {
-			article.setCreatTime(new Date());
-			int i = articleMapper.insert(article);
-			if (i==1){
-				List tags = article.getTags();
-				for (Object tag : tags) {
-					articleMapper.addTag(article.getId(), (Integer) tag);
+			if (article.getId() == null) {
+				article.setCreatTime(new Date());
+				int i = articleMapper.insert(article);
+				if (i == 1) {
+					List tags = article.getTags();
+					for (Object tag : tags) {
+						articleMapper.addTag(article.getId(), (Integer) tag);
+					}
 				}
-				QueryResult<Article> result = new QueryResult<>();
-				ArrayList<Article> articles = new ArrayList<>();
-				articles.add(article);
-				result.setList(articles);
-				result.setTotal(articles.size());
-				return new QueryResponseResult(CommonCode.SUCCESS,result);
+			} else {
+				article.setUpdateTime(new Date());
+				int i = articleMapper.updateArticle(article);
+				if (i==1){
+					List tags = article.getTags();
+					for (Object tag : tags) {
+						articleMapper.updateTag(article.getId(), (Integer) tag);
+					}
+				}
 			}
+			QueryResult<Article> result = new QueryResult<>();
+			ArrayList<Article> articles = new ArrayList<>();
+			articles.add(article);
+			result.setList(articles);
+			result.setTotal(articles.size());
+			return new QueryResponseResult(CommonCode.SUCCESS, result);
+
 		}
 		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
 	}
 
 	/**
 	 * 获取文章
+	 *
 	 * @param ArticleId
 	 * @return
 	 */
-	public QueryResponseResult findById(Integer ArticleId){
-		if(ArticleId!=null){
+	public QueryResponseResult findById(Integer ArticleId) {
+		if (ArticleId != null) {
 			List<Article> articles = articleMapper.findById(ArticleId);
+			for (Article article : articles) {
+				List<Tag> byArticleId = articleMapper.findByArticleId(article.getId());
+				article.setTags(byArticleId);
+			}
 			QueryResult<Article> result = new QueryResult<>();
 			result.setList(articles);
 			result.setTotal(articles.size());
-			return new QueryResponseResult(CommonCode.SUCCESS,result);
+			return new QueryResponseResult(CommonCode.SUCCESS, result);
 		}
-		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
 	}
+
 	/**
 	 * 发布草稿
+	 *
 	 * @param ArticleId
 	 * @return
 	 */
-	public QueryResponseResult releaseArticle(Integer ArticleId){
-		if(ArticleId!=null){
+	public QueryResponseResult releaseArticle(Integer ArticleId) {
+		if (ArticleId != null) {
 			int i = articleMapper.releaseArticle(ArticleId);
 			QueryResult<Article> result = new QueryResult<>();
 			result.setTotal(i);
-			return new QueryResponseResult(CommonCode.SUCCESS,result);
+			return new QueryResponseResult(CommonCode.SUCCESS, result);
 		}
-		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
 	}
+
 	/**
 	 * 删除文章
+	 *
 	 * @param ArticleId
 	 * @return
 	 */
-	public QueryResponseResult removeArticle(Integer ArticleId){
-		if(ArticleId!=null){
+	public QueryResponseResult removeArticle(Integer ArticleId) {
+		if (ArticleId != null) {
 			int i = articleMapper.deleteArticle(ArticleId);
 			int tag = articleMapper.deleteArticleTag(ArticleId);
 			QueryResult<Article> result = new QueryResult<>();
 			result.setTotal(i);
-			return new QueryResponseResult(CommonCode.SUCCESS,result);
+			return new QueryResponseResult(CommonCode.SUCCESS, result);
 		}
-		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
 	}
+
 	/**
 	 * 更新文章
+	 *
 	 * @param article
 	 * @return
 	 */
-	public QueryResponseResult updateArticle(Article article){
-		if(article!=null){
+	public QueryResponseResult updateArticle(Article article) {
+		if (article != null) {
 			article.setUpdateTime(new Date());
 			int i = articleMapper.updateArticle(article);
 			QueryResult<Article> result = new QueryResult<>();
 			result.setTotal(i);
-			return new QueryResponseResult(CommonCode.SUCCESS,result);
+			return new QueryResponseResult(CommonCode.SUCCESS, result);
 		}
-		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+		return new QueryResponseResult(CommonCode.INVALID_PARAM, null);
+	}
+
+	/**
+	 * 搜索
+	 * @return
+	 */
+	public QueryResponseResult search(Integer currentPage, Integer pageSize,Integer status, Integer uId,String search){
+		if (pageSize == null) {
+			pageSize = 5;
+		}
+		search='%'+search+'%';
+		List<Article> article1 = articleMapper.searchTotal(search);
+		//分页
+		Page articlePage = new Page(currentPage, pageSize, article1.size());
+		//查询的分页数据
+		List<Article> articlePages = articleMapper.search(articlePage,uId,search,status);
+		for (Article article : articlePages) {
+			List<Tag> byArticleId = articleMapper.findByArticleId(article.getId());
+			article.setTags(byArticleId);
+		}
+		articlePage.setList(articlePages);
+		QueryResult<Page> result = new QueryResult<>();
+		ArrayList<Page> list = new ArrayList<>();
+		list.add(articlePage);
+		result.setTotal(articlePages.size());
+		result.setList(list);
+		return new QueryResponseResult(CommonCode.SUCCESS, result);
 	}
 }
