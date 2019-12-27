@@ -67,7 +67,7 @@ public class FilesUploadService {
 		try {
 			FileInputStream fileInputStream = (FileInputStream) file.getInputStream();
 			//默认不指定key的情况下，以文件内容的hash值作为文件名
-			String fileKey ;
+			String fileKey =null;
 			//默认不指定key的情况下，以文件内容的hash值作为文件名
 			List<User> users = userMapper.findById(uId);
 			for (User user : users) {
