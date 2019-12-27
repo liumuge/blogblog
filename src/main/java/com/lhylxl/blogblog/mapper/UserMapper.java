@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 /**
  * @program: blogblog
@@ -31,10 +32,10 @@ public interface UserMapper {
 	@Select("select *from tb_user where username=#{userName} And password=#{password}")
 	public List<User> findUser(User user);
 
-	@Select("select *from tb_user")
-	public List<User> findUser1();
+	@Select("select * from tb_user where uid=#{id}")
+	public List<User> findById(Integer id);
 
-	@Select("select *from tb_user limit #{start},#{pageSize}")
-	public List<User> findUser2(Page page);
+	@Update("UPDATE tb_user SET  signature=#{signature},introduction=#{introduction} WHERE uid=#{uId}")
+	public int updateUser(User user);
 
 }

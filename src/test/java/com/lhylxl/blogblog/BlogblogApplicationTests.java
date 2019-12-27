@@ -48,14 +48,14 @@ class BlogblogApplicationTests {
 	}
 	@Test
 	public void testPage(){
-		List<User> user11 = userMapper.findUser1();
-		Page userPage = new Page(4,5,user11.size());
-		List<User> user = userMapper.findUser2(userPage);
-		for (User user1 : user) {
-			System.out.println(user1);
-		}
-		userPage.setList(user);
-		System.out.println(userPage);
+//		List<User> user11 = userMapper.findUser1();
+//		Page userPage = new Page(4,5,user11.size());
+//		List<User> user = userMapper.findUser2(userPage);
+//		for (User user1 : user) {
+//			System.out.println(user1);
+//		}
+//		userPage.setList(user);
+//		System.out.println(userPage);
 
 	}
 

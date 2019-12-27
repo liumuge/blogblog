@@ -25,4 +25,6 @@ public class User {
 	private Date creatTime;
 	private String avatar;
 	private String token;
+	private String signature;
+	private String introduction;
 }

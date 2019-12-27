@@ -71,4 +71,5 @@ public interface ArticleMapper {
 
 	@Update("update tb_article set views=#{views} where id=#{ArticleId}")
 	public int updateViews(Integer views,Integer ArticleId);
+
 }

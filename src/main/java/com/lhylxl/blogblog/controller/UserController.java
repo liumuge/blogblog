@@ -6,6 +6,7 @@ import com.lhylxl.blogblog.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,4 +38,19 @@ public class UserController {
 	public QueryResponseResult login(@RequestBody User user){
 		return userService.login(user);
 	}
+
+	@GetMapping("/findById")
+	@ApiOperation("获取用户")
+	public QueryResponseResult findById(Integer id){
+		return userService.findById(id);
+	}
+
+	@PostMapping("/updateUser")
+	@ApiOperation("更新用户")
+	public QueryResponseResult updateUser(@RequestBody User user){
+		return userService.updateUser(user);
+	}
+
+
+
 }

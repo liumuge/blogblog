@@ -71,4 +71,39 @@ public class UserService {
 		}
 		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
 	}
+
+	/**
+	 * 获取用户信息
+	 * @param id
+	 * @return
+	 */
+	public QueryResponseResult findById(Integer id){
+		if (id!=null){
+			List<User> users = userMapper.findById(id);
+			QueryResult<User> result = new QueryResult<>();
+			result.setList(users);
+			result.setTotal(users.size());
+			return new QueryResponseResult(CommonCode.SUCCESS,result);
+		}
+		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+
+	}
+
+	/**
+	 * 更新用户
+	 * @param user
+	 * @return
+	 */
+	public QueryResponseResult updateUser(User user) {
+		if(user!=null){
+			int i = userMapper.updateUser(user);
+			ArrayList<User> users = new ArrayList<>();
+			users.add(user);
+			QueryResult<User> result = new QueryResult<>();
+			result.setList(users);
+			result.setTotal(i);
+			return new QueryResponseResult(CommonCode.SUCCESS,result);
+		}
+		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+	}
 }
