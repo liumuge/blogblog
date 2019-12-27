@@ -66,10 +66,8 @@ public class FilesUploadService {
 	public String avatarUpload(MultipartFile file, Integer uId) {
 		try {
 			FileInputStream fileInputStream = (FileInputStream) file.getInputStream();
-			String originalFilename = file.getOriginalFilename();
-			String fileExtend = originalFilename.substring(originalFilename.lastIndexOf("."));
 			//默认不指定key的情况下，以文件内容的hash值作为文件名
-			String fileKey = UUID.randomUUID().toString().replace("-", "") + fileExtend;
+			String fileKey ;
 			//默认不指定key的情况下，以文件内容的hash值作为文件名
 			List<User> users = userMapper.findById(uId);
 			for (User user : users) {
