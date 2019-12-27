@@ -33,4 +33,7 @@ public interface CommentMapper {
 
 	@Delete("delete from tb_comment where id=#{id}")
 	public int deleteComment(Integer id);
+
+	@Select("select * from tb_comment where articleId=#{articleId} And status=1")
+	public List<Comment> findByArticleId(Integer articleId);
 }

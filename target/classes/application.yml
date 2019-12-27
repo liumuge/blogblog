@@ -40,10 +40,17 @@ spring:
         reset-enable: true
         login-username: admin
         login-password: admin
+      #配置spring监控切入点
+      aop-patterns: com.lhylxl.blogblog.*
+    #配置sql监控 不写sql监控会无数据
+    filters: stat,wall,slf4j
   # 开启日志彩色输出
   output:
     ansi:
       enabled: always
+#解决存入数据库的时间和取出的时间差8个小时
+  jackson:
+    time-zone: GMT+8
 logging:
   level:
     #打印sql语句
@@ -59,3 +66,11 @@ server:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+#pagehelper分页插件配置
+#pagehelper:
+#  # 数据库方言
+#  helper-dialect: mysql
+#  # 判断合理性比如负数和超过最大总数
+#  reasonable: true
+#  # 支持方法参数
+#  support-methods-arguments: true

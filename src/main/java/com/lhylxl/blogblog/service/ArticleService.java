@@ -5,8 +5,10 @@ import com.lhylxl.blogblog.common.model.response.QueryResponseResult;
 import com.lhylxl.blogblog.common.model.response.QueryResult;
 import com.lhylxl.blogblog.common.utils.Page;
 import com.lhylxl.blogblog.domain.Article;
+import com.lhylxl.blogblog.domain.Comment;
 import com.lhylxl.blogblog.domain.Tag;
 import com.lhylxl.blogblog.mapper.ArticleMapper;
+import com.lhylxl.blogblog.mapper.CommentMapper;
 import io.swagger.annotations.Example;
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,6 +28,9 @@ public class ArticleService {
 
 	@Autowired
 	ArticleMapper articleMapper;
+
+	@Autowired
+	CommentMapper commentMapper;
 
 	/**
 	 * 查询文章并分页
@@ -135,6 +140,8 @@ public class ArticleService {
 			List<Article> articles = articleMapper.findById(ArticleId);
 			for (Article article : articles) {
 				List<Tag> byArticleId = articleMapper.findByArticleId(article.getId());
+				List<Comment> comments = commentMapper.findByArticleId(article.getId());
+				article.setComments(comments);
 				article.setTags(byArticleId);
 			}
 			QueryResult<Article> result = new QueryResult<>();

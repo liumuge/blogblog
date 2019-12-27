@@ -40,6 +40,10 @@ spring:
         reset-enable: true
         login-username: admin
         login-password: admin
+      #配置spring监控切入点
+      aop-patterns: com.lhylxl.blogblog.*
+    #配置sql监控 不写sql监控会无数据
+    filters: stat,wall,slf4j
   # 开启日志彩色输出
   output:
     ansi:
