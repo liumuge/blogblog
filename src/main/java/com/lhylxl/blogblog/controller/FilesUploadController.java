@@ -27,10 +27,12 @@ public class FilesUploadController {
 	@Autowired
 	FilesUploadService filesUploadService;
 
-	//@PostMapping("/imagesUpload")
-	//@ApiOperation("图片上传")
+	@PostMapping("/imagesUpload")
+	@ApiOperation("图片上传")
 	public Map<String, Object> imagesUpload(MultipartFile image) {
 		return filesUploadService.imagesUpload(image);
 	}
+
+
 
 }

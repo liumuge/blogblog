@@ -106,4 +106,20 @@ public class UserService {
 		}
 		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
 	}
+
+	/**
+	 * 更新用户头像
+	 * @param avatar
+	 * @param uId
+	 * @return
+	 */
+	public QueryResponseResult updateUserAvatar(String avatar, Integer uId) {
+		if(uId!=null && avatar!=null){
+			int i = userMapper.updateUserAvatar(avatar,uId);
+			QueryResult<User> result = new QueryResult<>();
+			result.setTotal(i);
+			return new QueryResponseResult(CommonCode.SUCCESS,result);
+		}
+		return new QueryResponseResult(CommonCode.INVALID_PARAM,null);
+	}
 }

@@ -66,4 +66,11 @@ class BlogblogApplicationTests {
 			System.out.println(tag);
 		}
 	}
+
+	@Test
+	public void testQiNiu(){
+
+	}
+
+
 }

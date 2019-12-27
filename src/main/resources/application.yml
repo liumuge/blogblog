@@ -74,3 +74,10 @@ mybatis:
 #  reasonable: true
 #  # 支持方法参数
 #  support-methods-arguments: true
+
+#七牛的配置
+qiniu:
+  accessKey: 2egeABVKkzmgSS_CushuGhfSGOn83sSJ0bJ8i8u_
+  secretKey: jHrbPW7xRWy5tubv8tCKFYTo1jHy8KkLKRqMk5E3
+  bucketName: mugeblog
+  fileDomain: http://q35rqt8ei.bkt.clouddn.com/ #文件访问域名前缀

@@ -1,14 +1,21 @@
 package com.lhylxl.blogblog.service;
 
 import com.lhylxl.blogblog.common.model.response.QueryResponseResult;
+import com.lhylxl.blogblog.common.utils.QiniuUtil;
+import com.lhylxl.blogblog.domain.User;
+import com.lhylxl.blogblog.mapper.UserMapper;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,53 +32,57 @@ public class FilesUploadService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(FilesUploadService.class);
 
-	public Map<String, Object>  imagesUpload(MultipartFile image){
+	@Autowired
+	private QiniuUtil qiniuUtil;
+
+	@Autowired
+	UserMapper userMapper;
+
+	public Map<String, Object> imagesUpload(MultipartFile file) {
 		Map<String, Object> map = new HashMap<>(2);
-		//本地使用,上传位置
-		String rootPath = null;
-		if(System.getProperty("os.name").startsWith("Windows")) {
-			rootPath = "D:\\WorkingArea\\WebstormWorkSpace\\myblog\\src\\assets\\images\\";
-		}else if (System.getProperty("os.name").startsWith("Linux")){
-			rootPath = "D:\\WorkingArea\\WebstormWorkSpace\\myblog\\src\\assets\\images\\";
-		}
-
-		//文件的完整名称,如spring.jpeg
-		String filename = image.getOriginalFilename();
-		//文件后缀,如.jpeg
-		String suffix = filename.substring(filename.lastIndexOf("."));
-
-		//创建年月文件夹
-		Calendar date = Calendar.getInstance();
-		File dateDirs = new File(date.get(Calendar.YEAR) + File.separator + (date.get(Calendar.MONTH) + 1));
-
-		//目标文件
-		File descFile = new File(rootPath + File.separator + dateDirs + File.separator + filename);
-
-		String newFilename = UUID.randomUUID() + suffix;
-		String parentPath = descFile.getParent();
-		descFile = new File(parentPath + File.separator + newFilename);
-
-		//判断目标文件所在的目录是否存在
-		if (!descFile.getParentFile().exists()) {
-			//如果目标文件所在的目录不存在，则创建父目录
-			descFile.getParentFile().mkdirs();
-		}
-
-		//将内存中的数据写入磁盘
 		try {
-			image.transferTo(descFile);
+			FileInputStream fileInputStream = (FileInputStream) file.getInputStream();
+			String originalFilename = file.getOriginalFilename();
+			String fileExtend = originalFilename.substring(originalFilename.lastIndexOf("."));
+			//默认不指定key的情况下，以文件内容的hash值作为文件名
+			String fileKey = UUID.randomUUID().toString().replace("-", "") + fileExtend;
+			String fileUrl = qiniuUtil.upload(fileInputStream, fileKey);
+			LOGGER.info("上传成功:" + fileUrl);
+			map.put("result", true);
+			map.put("url", fileUrl);
 		} catch (Exception e) {
 			e.printStackTrace();
-			LOGGER.error("上传失败，cause:{}", e);
-			map.put("result", false);
-			return map;
+			LOGGER.info("图片上传失败:");
 		}
-		//完整的url
-		String fileUrl =""+descFile;
-		LOGGER.info("上传成功:"+fileUrl);
-		map.put("result", true);
-		map.put("url", fileUrl);
-		System.out.println(getClass().getClassLoader().getResource("").getPath());
 		return map;
+	};
+
+	/**
+	 * 头像上传更新
+	 * @param file
+	 * @param uId
+	 * @return
+	 */
+	public String avatarUpload(MultipartFile file, Integer uId) {
+		try {
+			FileInputStream fileInputStream = (FileInputStream) file.getInputStream();
+			String originalFilename = file.getOriginalFilename();
+			String fileExtend = originalFilename.substring(originalFilename.lastIndexOf("."));
+			//默认不指定key的情况下，以文件内容的hash值作为文件名
+			String fileKey = UUID.randomUUID().toString().replace("-", "") + fileExtend;
+			//默认不指定key的情况下，以文件内容的hash值作为文件名
+			List<User> users = userMapper.findById(uId);
+			for (User user : users) {
+				fileKey = user.getToken();
+			}
+			String fileUrl =
+					qiniuUtil.upload(fileInputStream, fileKey) + "?t=" + new Date().getTime();
+			LOGGER.info("上传成功:" + fileUrl);
+			return fileUrl;
+		} catch (Exception e) {
+			e.printStackTrace();
+			LOGGER.info("头像上传失败:");
+		}
+		return null;
 	}
 }

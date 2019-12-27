@@ -2,6 +2,7 @@ package com.lhylxl.blogblog.controller;
 
 import com.lhylxl.blogblog.common.model.response.QueryResponseResult;
 import com.lhylxl.blogblog.domain.User;
+import com.lhylxl.blogblog.service.FilesUploadService;
 import com.lhylxl.blogblog.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @program: blogblog
@@ -26,6 +28,9 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	FilesUploadService filesUploadService;
 
 	@PostMapping("/register")
 	@ApiOperation("注册")
@@ -51,6 +56,12 @@ public class UserController {
 		return userService.updateUser(user);
 	}
 
+	@PostMapping("/avatarUpload")
+	@ApiOperation("头像更新上传")
+	public QueryResponseResult avatarUpload(MultipartFile file, Integer uId){
+		String avatar = filesUploadService.avatarUpload(file, uId);
+		return userService.updateUserAvatar(avatar,uId);
+	}
 
 
 }

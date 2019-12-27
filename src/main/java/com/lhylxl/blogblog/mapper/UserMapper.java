@@ -38,4 +38,7 @@ public interface UserMapper {
 	@Update("UPDATE tb_user SET  signature=#{signature},introduction=#{introduction} WHERE uid=#{uId}")
 	public int updateUser(User user);
 
+	@Update("UPDATE tb_user SET  avatar=#{avatar} WHERE uid=#{uId}")
+	public int updateUserAvatar(String avatar,Integer uId);
+
 }

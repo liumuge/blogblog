@@ -163,7 +163,7 @@ public class ArticleService {
 		if (ArticleId != null) {
 			int i = articleMapper.deleteArticle(ArticleId);
 			int tag = articleMapper.deleteArticleTag(ArticleId);
-			int comment = commentMapper.deleteByArticleId(ArticleId);
+			commentMapper.deleteByArticleId(ArticleId);
 			QueryResult<Article> result = new QueryResult<>();
 			result.setTotal(i);
 			return new QueryResponseResult(CommonCode.SUCCESS, result);
